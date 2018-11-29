@@ -1,0 +1,51 @@
+<body>
+
+  <div class="col-xs-12 blogs_image">
+    <img class="col-xs-6 col-xs-offset-3" src="../assets/blogs_header.jpg">
+  </div>
+  
+  <div class="container">
+    
+
+    <div class="row col-md-8">
+
+
+<h1>以下の内容で、送信する。</h1>
+
+<!-- 投稿確認画面表示 -->
+<%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+
+  <p>タイトル:<%= @blog.title %></p>
+  <p>本文:<%= @blog.content %></p>
+  <%= form.submit  "登録する" %>
+<% end %>
+
+<!--　新規作成画面へ戻る -->
+<%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <%= form.submit "もどる", name: 'back' %>
+<% end %>
+
+  </div>
+    
+    <aside class="col-md-4 sidemenu">
+      <section id="border">
+        <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default"><%= link_to 'New Post', new_blog_path %></button>
+            </div>
+      </section>
+      <section>
+        <h2>My Blog</h2>
+        <ul>
+          <li>top</li>
+          <li>blog all</li>
+          <li>new blog</li>
+        </ul>
+      </section>
+    </aside>
+  </div> 
+</body>
+ 

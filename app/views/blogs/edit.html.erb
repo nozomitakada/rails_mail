@@ -1,0 +1,56 @@
+<body>
+
+  <div class="col-xs-12 blogs_image">
+    <img class="col-xs-6 col-xs-offset-3" src="../../assets/blogs_header.jpg">
+  </div>
+  
+  <div class="container">
+    
+
+    <div class="row col-md-8">
+      <h1>Blog Edit</h1>
+
+<%= form_with(model: @blog, local: true) do |form| %>
+   <% if @blog.errors.any? %>
+    <div id="error_explanation">
+      <h2>投稿できません．文字数を確認して下さい．</h2>
+      
+      
+      <ul>
+      <% @blog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+      
+    </div>
+  <% end %>
+  
+  <div class="blog_title">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="blog_title">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>
+    </div>
+    
+    <aside class="col-md-4 sidemenu">
+      <section id="border">
+        <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default"><%= link_to 'New Post', new_blog_path %></button>
+            </div>
+      </section>
+      <section>
+        <h2>My Blog</h2>
+        <ul>
+          <li>top</li>
+          <li>blog all</li>
+          <li>new blog</li>
+        </ul>
+      </section>
+    </aside>
+  </div> 
+</body>

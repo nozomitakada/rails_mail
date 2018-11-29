@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Blogs</title>
+  <meta charset="UTF-8">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+ <header>
+    <ul>
+      <li><a href="tops">Top</a></li>
+      <li><a href="blogs">Blog All</a></li>
+      <li><a href="blogs/new">New Blog</a></li>
+    </ul>
+  </header>
+<%= yield %>
+
+<footer>
+    
+    <p>© 2018.11 Copyright.</p>
+</footer>
+
+</body>
+</html>

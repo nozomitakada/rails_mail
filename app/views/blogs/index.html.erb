@@ -1,0 +1,139 @@
+<body>
+
+  <div class="col-xs-12 blogs_image">
+    <img class="col-xs-6 col-xs-offset-3" src="assets/blogs_header.jpg">
+  </div>
+  
+  <div class="container">
+    
+
+    <div class="row col-md-8">
+      <h1>Blog All</h1>
+      <% @blogs.each do |blog| %>
+        <div class="blog-panel">
+          <h2><%= blog.title %></h2>
+          <p><%= blog.content %></p>
+          <div class="blog-links">
+            <%= link_to 'Show', blog, class: 'btn btn-default' %>
+            <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-info' %> |
+            <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }, class: 'btn btn-danger' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    
+    <aside class="col-md-4 sidemenu">
+      <section id="border">
+        <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default"><%= link_to 'New Post', new_blog_path %></button>
+            </div>
+      </section>
+      <section>
+        <h2>My Blog</h2>
+        <ul>
+          <li>top</li>
+          <li>blog all</li>
+          <li>new blog</li>
+        </ul>
+      </section>
+    </aside>
+  </div> 
+</body>
+ 
+<!--<h1>Listing Blogs</h1>
+
+<div class="container">
+  <div id="new-blog-link">
+    <%= link_to '新規ブログを作成する', new_blog_path %>
+  </div>
+
+  <div class="row">
+    <% @blogs.each do |blog| %>
+      <div class="blog-panel">
+        <h2><%= blog.title %></h2>
+        <p><%= blog.content %></p>
+        <div class="blog-links">
+          <%= link_to 'Show', blog, class: 'btn btn-default' %>
+          <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-info' %> |
+          <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </div>
+      </div>
+    <% end %>
+    -->
+<!--
+<h1>ブログ一覧</h1>
+
+<table>
+    <tr>
+        <th>タイトル</th>
+        <th>内容</th>
+    </tr>
+
+    <% @blogs.each do |blog| %>
+    
+    <tr>
+        <td><%= blog.title %></td>
+        <td><%= blog.content %></td>
+        
+        <td><%= link_to '詳細', blog_path(blog.id) %></td>
+        <td><%= link_to "編集", edit_blog_path(blog.id) %></td>
+        <td><%= link_to '削除', blog_path(blog.id), method: :delete %></td>
+    </tr>
+    <% end %>
+</table>
+
+<br>
+
+<%= link_to '投稿', new_blog_path %>
+-->
+<!--
+<div class="container">
+<header class="header">Bootstrap<span class="label label-default">Challenge!</span></header>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+        <span class="sr-only">Bootstrap</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Bootstrap</a>
+    </div>
+    <div id="gnavi" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="">top</a></li>
+        <li><a href="">menu1</a></li>
+        <li><a href="">menu2</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<article>
+    <div class="contents">
+      <div class="row">
+
+        <div class="col-md-6">
+          <ul class="row_A">
+            <li class="col-sm-6 col-md-3">contents1</li>
+            <li class="col-sm-6 col-md-offset-1 col-md-8">contents2</li>
+            <li class="col-sm-6 col-md-5">contents3</li>
+            <li class="col-sm-6 col-md-offset-2 col-md-5">contents4</li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <div class="topic">
+            <ul class="row_B">
+              <li class="col-md-12">bootstrapを使ってレスポンシブデザインを実現しよう！</li>
+              <li class="col-md-12">やればできる！bootstrapを使ってみよう！</li>
+              <li class="col-md-12">怖くない！レスポンシブデザインができるようになればWebアプリケーションもワンランク上に!</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </article>
+</div>
+-->
