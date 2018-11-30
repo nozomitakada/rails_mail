@@ -5,7 +5,7 @@ class BlogsController < ApplicationController
   end
   
   def new
-    @blog =Blog.new
+    #@blog =Blog.new
     if params[:back]
       @blog = Blog.new(blog_params)
     else
@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
   end
   
   def create
-    Blog.create(blog_params)
+    #Blog.create(blog_params)
     @blog = Blog.new(blog_params)
     if @blog.save
       redirect_to blogs_path, notice: "ブログを作成しました！"
