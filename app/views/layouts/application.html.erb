@@ -10,9 +10,12 @@
 <body>
  <header>
     <ul>
-      <li><a href="tops">Top</a></li>
+      <!--<li><a href="tops">Top</a></li>
       <li><a href="">Blog All</a></li>
-      <li><a href="/new">New Blog</a></li>
+      <li><a href="blogs/new">New Blog</a></li>-->
+      <li><%= link_to 'Top' ,'/tops' %></li>
+      <li><%= link_to 'Blog all' ,'/blogs' %></li>
+      <li><%= link_to 'New Blog' ,'/blogs/new' %></li>
     </ul>
   </header>
 <%= yield %>
