@@ -1,10 +1,10 @@
+
   <div class="col-xs-12 blogs_image">
     <img class="col-xs-6 col-xs-offset-3" src="assets/blogs_header.jpg">
   </div>
-  
-  <div class="container">
-    
 
+<% if logged_in? %>  
+  <div class="container">
     <div class="row col-md-8">
       <h1>Blog All</h1>
       <% @blogs.each do |blog| %>
@@ -36,7 +36,43 @@
       </section>
     </aside>
   </div> 
- 
+ <% else %>
+ <div class="container">
+    <div class="row col-md-8">
+      <h1>Log in</h1>
+      <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "Log in" %>
+      <% end %>
+    </div>
+    <aside class="col-md-4 sidemenu">
+      <section id="border">
+        <div class="btn-group" role="group" aria-label="...">
+          <button type="button" class="btn btn-default"><% if logged_in? %><%= link_to 'New Post', new_blog_path %><% else %><%= link_to 'New Post', new_user_path %><% end %></button>
+        </div>
+      </section>
+      <section>
+        <h2>My Blog</h2>
+        <ul>
+          <% if logged_in? %>
+          <li><%= link_to 'Top' ,'/tops' %></li>
+          <li><%= link_to 'Blog all' ,'/blogs' %></li>
+          <li><%= link_to 'New Blog' ,'/blogs/new' %></li>
+          <% else %>
+          <li><%= link_to 'Top' ,new_user_path %></li>
+          <li><%= link_to 'Blog all' ,new_user_path %></li>
+          <li><%= link_to 'New Blog' ,new_user_path %></li>
+          <% end %>
+        </ul>
+      </section>
+    </aside>
+  </div>
+ <% end %>
 <!--<h1>Listing Blogs</h1>
 
 <div class="container">
