@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  root to: "tops#index"
-  
+  #root to: "tops#index"
+   get 'sessions/new'
+   
+  resources :sessions, only: [:new, :create, :show, :destroy]
+  resources :users
+
  resources :tops do
    collection do
      get :tops
@@ -13,10 +17,9 @@ Rails.application.routes.draw do
    end
  end
  
- 
-  resources :blogs do
-    collection do
-      post :confirm
+    resources :blogs do
+        collection do
+            post :confirm
+        end
     end
-  end
 end

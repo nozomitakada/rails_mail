@@ -13,11 +13,25 @@
       <!--<li><a href="tops">Top</a></li>
       <li><a href="">Blog All</a></li>
       <li><a href="blogs/new">New Blog</a></li>-->
+      <% if logged_in? %>
       <li><%= link_to 'Top' ,'/tops' %></li>
       <li><%= link_to 'Blog all' ,'/blogs' %></li>
       <li><%= link_to 'New Blog' ,'/blogs/new' %></li>
+      <li><%= link_to "Profile", user_path(current_user.id) %></li>
+      <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+
+      <% else %>
+      <li><%= link_to 'Top' ,'/tops' %></li>
+      <li><%= link_to 'Sign Up' , new_user_path %></li>
+      <li><%= link_to 'Login' ,new_session_path %></li>
+      <% end %>
     </ul>
   </header>
+    <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+  
+  
 <%= yield %>
 
 <footer>
