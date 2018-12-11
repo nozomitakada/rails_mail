@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
   root to: "tops#index"
-   get 'sessions/new'
+   #get 'sessions/new'
    
-   resources :favorites, only:[:create, :destroy] do
-       collection do
-           post :blogs
-       end
-   end
+   resources :favorites, only:[:create, :destroy]
    
   resources :sessions, only: [:new, :create, :show, :destroy]
-  resources :users, only:[:new, :show]
+  resources :users, only:[:new, :show, :create]
 
  resources :tops do
    collection do
@@ -28,6 +24,4 @@ Rails.application.routes.draw do
             post :confirm
         end
     end
-    
-    
 end
