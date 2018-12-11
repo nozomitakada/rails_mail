@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
   resources :favorites do
       collection do
-          get :blogs
+          post :blogs
       end
   end
 
