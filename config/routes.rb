@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "tops#index"
    get 'sessions/new'
    
-   resources :favorites, only:[:create, :destroy, :show]
+   resources :favorites, only:[:create, :destroy]
    
   resources :sessions, only: [:new, :create, :show, :destroy]
   resources :users, only:[:new, :show]
