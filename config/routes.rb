@@ -6,6 +6,12 @@ Rails.application.routes.draw do
    
   resources :sessions, only: [:new, :create, :show, :destroy]
   resources :users, only:[:new, :show]
+  
+  resources :favorites do
+      collection do
+          get :blogs
+      end
+  end
 
  resources :tops do
    collection do
