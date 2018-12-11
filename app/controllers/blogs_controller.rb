@@ -1,11 +1,12 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   def index
+    
     @blogs = Blog.all
+    @favorites = Favorite.all
   end
   
   def new
-    #@blog =Blog.new
     if params[:back]
       @blog = Blog.new(blog_params)
     else
@@ -14,8 +15,8 @@ class BlogsController < ApplicationController
   end
   
   def create
-    #Blog.create(blog_params)
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
     if @blog.save
       redirect_to blogs_path, notice: "ブログを作成しました！"
     else
@@ -26,13 +27,16 @@ class BlogsController < ApplicationController
   
   def confirm
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
     render :new if @blog.invalid?
   end
   
   def show
     params[:id]
     #@blog = Blog.find(params[:id])
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
+
   
   def edit
     #@blog = Blog.find(params[:id])

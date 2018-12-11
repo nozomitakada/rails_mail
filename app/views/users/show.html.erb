@@ -3,13 +3,28 @@
   </div>
   <div class="container">
     <div class="row col-md-8">
+      
+      <div>
+      <h1>Profile</h1>
+      <p>Name: <%= @user.name %></p>
+      <p>Mail: <%= @user.email %></p>
+      </div>
+      <div>
+        <h1>Favorite Blogs</h1>
+        <% if @favorites_blogs.empty? %>
+        <p>お気に入りしているブログはありません．</p>
+        <% else %>
+        
+        <% current_user.favorites.each do |favorite| %>
 
-<h1>Profile</h1>
-<p>Name: <%= @user.name %></p>
-<p>Mail: <%= @user.email %></p>
-</div>
+        <p><%= favorite.blog.title %>，<%= favorite.blog.content %></p>
+        <% end %>
+        <% end %>
+      </div>
+      
+    </div>
 
-<aside class="col-md-4 sidemenu">
+    <aside class="col-md-4 sidemenu">
       <section id="border">
         <div class="btn-group" role="group" aria-label="...">
           <button type="button" class="btn btn-default"><% if logged_in? %><%= link_to 'New Post', new_blog_path %><% else %><%= link_to 'New Post', new_user_path %><% end %></button>

@@ -6,15 +6,20 @@
 <% if logged_in? %>  
   <div class="container">
     <div class="row col-md-8">
+      
       <h1>Blog All</h1>
       <% @blogs.each do |blog| %>
         <div class="blog-panel">
           <h2><%= blog.title %></h2>
+          <p>blog.user_id:<%= blog.user_id %></p>
+          <p><%= current_user.id %></p>
           <p><%= blog.content %></p>
           <div class="blog-links">
             <%= link_to 'Show', blog, class: 'btn btn-default' %>
+            <% if current_user.id == blog.user_id %>
             <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-info' %> |
             <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure you want to delete it?' }, class: 'btn btn-danger' %>
+            <% end %>
           </div>
         </div>
       <% end %>

@@ -7,6 +7,16 @@
     <h1>ブログ詳細画面</h1>
     <p>タイトル: <%= @blog.title %></p>
     <p>内容: <%= @blog.content %></p>    
+    
+    <% unless @blog.user_id == current_user.id %>
+    <% if @favorite.present? %>
+    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+    <% else %>
+    <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
+    <% end %>
+    <% end %>
+
+
   </div>
   <aside class="col-md-4 sidemenu">
     <section id="border">
@@ -17,7 +27,7 @@
       <section>
         <h2>My Blog</h2>
         <ul>
-  <li><%= link_to 'Top' ,'/tops' %></li>
+      <li><%= link_to 'Top' ,'/tops' %></li>
       <li><%= link_to 'Blog all' ,'/blogs' %></li>
       <li><%= link_to 'New Blog' ,'/blogs/new' %></li>
       </ul>
