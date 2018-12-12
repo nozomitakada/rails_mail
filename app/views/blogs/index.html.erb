@@ -11,6 +11,7 @@
       <% @blogs.each do |blog| %>
         <div class="blog-panel">
           <h2><%= blog.title %></h2>
+          <p>投稿者：<%= blog.user.name %></p>
           <p><%= blog.content %></p>
           <div class="blog-links">
             <%= link_to 'Show', blog, class: 'btn btn-default' %>
@@ -30,7 +31,7 @@
             </div>
       </section>
       <section>
-        <h2>My Blog!!!</h2>
+        <h2>My Blog</h2>
         <ul>
           <li><%= link_to 'Top' ,'/tops' %></li>
       <li><%= link_to 'Blog all' ,'/blogs' %></li>
