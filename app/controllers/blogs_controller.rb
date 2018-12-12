@@ -1,7 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   def index
-    
     @blogs = Blog.all
     @favorites = Favorite.all
   end
@@ -66,5 +65,4 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     
   end
-
 end
