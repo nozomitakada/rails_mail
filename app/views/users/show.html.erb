@@ -11,15 +11,10 @@
       </div>
       <div>
         <h1>Favorite Blogs</h1>
-        <% if @favorites_blogs.empty? %>
-        <p>お気に入りしているブログはありません．</p>
-        <% else %>
-        
-        <% current_user.favorites.each do |favorite| %>
-        
+        <% @user.favorites.each do |favorite| %>
         <p><%= favorite.blog.title %>，<%= favorite.blog.content %></p>
         <% end %>
-        <% end %>
+        
       </div>
       
     </div>
