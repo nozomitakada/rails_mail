@@ -11,9 +11,22 @@
       </div>
       <div>
         <h1>Favorite Blogs</h1>
+        <table border="1" class="fav">
+          <tr>
+            <th width="100px">title</th>
+            <th width="100px">content</th>
+          </tr>
         <% @user.favorites.each do |favorite| %>
-        <p><%= favorite.blog.title %>，<%= favorite.blog.content %></p>
+          
+          <tr>
+        
+            <td><%= favorite.blog.title %></td>
+            <td><%= favorite.blog.content %></td>
+          </tr>
         <% end %>
+       
+        </table>
+        
         
       </div>
       
