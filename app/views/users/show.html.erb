@@ -13,15 +13,15 @@
         <h1>Favorite Blogs</h1>
         <table border="1" class="fav">
           <tr>
-            <th width="100px">title</th>
-            <th width="100px">content</th>
+            <th width="300px">title</th>
+            <th width="300px">content</th>
           </tr>
         <% @user.favorites.each do |favorite| %>
           
           <tr>
         
-            <td><%= favorite.blog.title %></td>
-            <td><%= favorite.blog.content %></td>
+            <td class="fav"><%= favorite.blog.title %></td>
+            <td clas="fav"><%= favorite.blog.content %></td>
           </tr>
         <% end %>
        
