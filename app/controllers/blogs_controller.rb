@@ -2,6 +2,7 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   def index
     @blogs = Blog.all
+    #@user = User.find(user_id)
     @favorites = Favorite.all
   end
   
