@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    root to: "tops#index"
+    root to: "letter_opener"
     resources :favorites, only:[:create, :destroy]
     resources :sessions, only: [:new, :create, :show, :destroy]
     resources :users, only:[:new, :show, :create]
