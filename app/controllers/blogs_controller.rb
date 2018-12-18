@@ -18,12 +18,11 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
       if @blog.save
-        ##redirect_to blogs_path, notice: "ブログを作成しました！"
         ContactMailer.contact_mail(@blog).deliver
-        ##redirect_to @contact, notice:'Contact was successfully created.'
-        redirect_to blogs_path, notice:'Contact was successfully created.'
+        redirect_to blogs_path, notice: "ブログを作成しました！"
       else
-        render 'new'
+        ##render 'new'
+        render :new
       end
    
   end
