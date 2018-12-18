@@ -54,6 +54,6 @@ Rails.application.configure do
   
   # config.action_mailer.default_url_options = { host: 'dive-into-code-task-takadanozomi.c9users.io' }
   # config.action_mailer.default_url_options = { host: 'hidden-wildwood-40541.herokuapp.com/' }
-  config.action_mailer.default_url_options = { host: 'Non-PC' }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
   config.action_mailer.delivery_method = :letter_opener_web
 end
