@@ -18,6 +18,7 @@
       <li><%= link_to 'Blog all' ,'/blogs' %></li>
       <li><%= link_to 'New Blog' ,'/blogs/new' %></li>
       <li><%= link_to "Profile", user_path(current_user.id) %></li>
+      <li><%= link_to 'Mail' ,'/letter_opener',:target=>["_blank"] %></li>
       <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
 
       <% else %>
