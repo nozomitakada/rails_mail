@@ -23,7 +23,7 @@ Rails.application.routes.draw do
  end
  resources :contacts
  
- resources :letter_opener
+ resources :contact_mailer
  
 mount LetterOpenerWeb::Engine, at:"/letter_opener"if Rails.env.development?
 
