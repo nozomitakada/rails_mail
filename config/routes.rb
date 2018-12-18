@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: "tops#index"
+  root to: letter_opener_web
    #get 'sessions/new'
    
  resources :favorites, only:[:create, :destroy]
