@@ -22,9 +22,8 @@ class BlogsController < ApplicationController
       BlogMailer.blog_mail(@blog).deliver
       redirect_to @blog, notice: "ブログを作成しました！"
     else
-      render 'new'
+      render :new
     end
-    
   end
   
   def confirm
