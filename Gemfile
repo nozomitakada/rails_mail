@@ -56,7 +56,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bcrypt','3.1.11'
 
 group :development do
-  gem 'letter_opener_web'
+  # gem 'letter_opener_web'
+  gem 'letter_opener_web', '~> 1.0'
 end
 
 gem 'carrierwave'
