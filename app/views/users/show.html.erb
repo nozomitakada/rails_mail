@@ -3,9 +3,33 @@
   </div>
   <div class="container">
     <div class="row col-md-8">
-      
       <div>
       <h1>Profile</h1>
+      
+<!--  画像 -->     
+      <table>
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+        <%# @user.each do |feed| %>
+          <tr>
+            <td><%#= user.image %></td>
+            <td><%#= link_to 'Show', feed %></td>
+            <td><%#= link_to 'Edit', edit_feed_path(user) %></td>
+            <td><%#= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <%# end %>
+        </tbody>
+      </table>
+      <br>
+      <%#= link_to 'New Feed', new_user_path %>
+
+<!--  画像 -->
+
       <p>Name: <%= @user.name %></p>
       <p>Mail: <%= @user.email %></p>
       </div>

@@ -18,9 +18,22 @@ class UsersController < ApplicationController
        #@favorites_blogs = @user.favorites
     end
     
+    def new_img
+        if params[:back]
+          @user_img = Feed.new(feed_params)
+        else
+          @user_img = Feed.new
+        end
+    end
+    
     private
     
     def user_params
         params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    end    
+    end
+    
+    def feed_params
+        params.require(:feed).permit(:image, :image_cache)
+    end
+    
 end
