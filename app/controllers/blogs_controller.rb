@@ -20,7 +20,7 @@ class BlogsController < ApplicationController
     
     if @blog.save
       BlogMailer.blog_mail(@blog).deliver
-      redirect_to blogs_path, notice: "ブログを作成しました！"
+      redirect_to @blog, notice: "ブログを作成しました！"
     else
       render 'new'
     end
