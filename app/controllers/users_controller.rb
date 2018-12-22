@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     def show
        #params[:id]
        @user = User.find(params[:id])
-       @feeds = Feed.
+       @feeds = Feed.all
        #@favorites_blogs = current_user.favorite_blogs
        #@favorites_blogs = @user.favorites
     end
