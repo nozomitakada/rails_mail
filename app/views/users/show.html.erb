@@ -15,19 +15,20 @@
           </tr>
         </thead>
         <tbody>
-        <%# @user.each do |feed| %>
           <tr>
-            <td><%#= user.image %></td>
+            <%# if @feeds.image.url.empty? %>
+            <%# else %>
+            <td><%= @feeds.image.url %></td>
             <td><%#= link_to 'Show', feed %></td>
-            <td><%#= link_to 'Edit', edit_feed_path(user) %></td>
+            <td><%#= link_to 'Edit', edit_feed_path(feed) %></td>
             <td><%#= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
-        <%# end %>
+          <%# end %>
         </tbody>
       </table>
-      <br>
-      <%#= link_to 'New Feed', new_user_path %>
+      <%= link_to 'New Feed', new_feed_path %>
 
+      <%#= image_tag @feed.image.url %>
 <!--  画像 -->
 
       <p>Name: <%= @user.name %></p>

@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     def show
        #params[:id]
        @user = User.find(params[:id])
+       @feeds = Feed.
        #@favorites_blogs = current_user.favorite_blogs
        #@favorites_blogs = @user.favorites
     end
@@ -29,11 +30,7 @@ class UsersController < ApplicationController
     private
     
     def user_params
-        params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    end
-    
-    def feed_params
-        params.require(:feed).permit(:image, :image_cache)
+        params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :image_cache)
     end
     
 end
