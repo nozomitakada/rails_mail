@@ -16,17 +16,15 @@
         </thead>
         <tbody>
           <tr>
-            <%# if @feeds.image.url.empty? %>
-            <%# else %>
-            <td><%#= @feeds.image.url %></td>
+            <td><%#= @feeds %></td>
             <td><%#= link_to 'Show', feed %></td>
             <td><%#= link_to 'Edit', edit_feed_path(feed) %></td>
             <td><%#= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
-          <%# end %>
+          
         </tbody>
       </table>
-      <%= link_to 'New Feed', new_feed_path %>
+      <%#= link_to 'New Feed', new_feed_path %>
 
       <%#= image_tag @feed.image.url %>
 <!--  画像 -->
