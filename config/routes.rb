@@ -20,11 +20,6 @@ Rails.application.routes.draw do
         end
     end
     resources :contacts
-  resources :feeds  
+  resources :feeds
     mount LetterOpenerWeb::Engine, at:"/letter_opener"
-##    if Rails.env.development? || Rails.env.production?
-##        mount LetterOpenerWeb::Engine, at:"/letter_opener"
-##    end
-
-   
 end
