@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :feeds
+  
     root to: "tops#index"
     resources :favorites, only:[:create, :destroy]
     resources :sessions, only: [:new, :create, :show, :destroy]
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
         end
     end
     resources :contacts
-    
+  resources :feeds  
     mount LetterOpenerWeb::Engine, at:"/letter_opener" if Rails.env.development?
 ##    if Rails.env.development? || Rails.env.production?
 ##        mount LetterOpenerWeb::Engine, at:"/letter_opener"
