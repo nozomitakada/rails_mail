@@ -62,7 +62,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "bootstrap_#{Rails.env}"
   config.action_mailer.perform_caching = false
   
-  #config.action_mailer.delivery_method = :letter_opener_web
+  config.action_mailer.delivery_method = :letter_opener_web
 
   #config.action_mailer.default_url_options = { host: 'hidden-wildwood-40541.herokuapp.com' } #hoge.herokuapp.com
   #ActionMailer::Base.delivery_method = :smtp
