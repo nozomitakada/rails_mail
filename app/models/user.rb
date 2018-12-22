@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    belongs_to :feed
+    #belongs_to :feed
     has_many :blogs
     has_many :favorites, dependent: :destroy
     has_many :favorite_blogs, through: :favorites, source: :blog
@@ -11,5 +11,5 @@ class User < ApplicationRecord
     has_secure_password
     validates :password,presence: true,length:{ minimum:6 }
     
-    mount_uploader :image, ImageUploader
+    #mount_uploader :image, ImageUploader
 end
