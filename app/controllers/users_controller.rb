@@ -7,7 +7,7 @@ class UsersController < ApplicationController
         if @user.save
             redirect_to user_path(@user.id)
         else
-            render 'new'
+            render :new
         end
     end
     
@@ -19,19 +19,11 @@ class UsersController < ApplicationController
        #@favorites_blogs = @user.favorites
     end
     
-#    def new_img
-#        if params[:back]
-#          @user_img = Feed.new(feed_params)
-#        else
-#          @user_img = Feed.new
-#        end
-#    end
-    
     private
     
     def user_params
-        #params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :image_cache)
-        params.require(:user).permit(:name, :email, :password, :password_confirmation)
+        params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :image_cache)
+        #params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
     
 end
